@@ -99,5 +99,5 @@ app.get('/', function(req, res, next) {
 //Store all JS and CSS in Scripts folder.
 app.use("/app", _expressPackage.static('./app/'));
 //Store all HTML files in view folder.
-app.use(express.static(__dirname + '/View'));
+app.use(_expressPackage.static(__dirname + '/View'));
 

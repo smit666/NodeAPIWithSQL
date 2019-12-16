@@ -1,6 +1,17 @@
 var _expressPackage = require("express");  
 var _bodyParserPackage = require("body-parser");  
 var _sqlPackage = require("mssql");  
+var multer  =   require('multer');
+const path = require('path');
+var storage =   multer.diskStorage({
+    destination: function (req, file, callback) {
+      callback(null, './uploads');
+    },
+    filename: function (req, file, callback) {
+        //Date.now()+ '-'
+      callback(null, file.originalname  );
+    }
+  });
 //Initilize app with express web framework  
 var app = _expressPackage();  
 //To parse result in json format  
@@ -68,3 +79,25 @@ app.get("/DepartmentList", function(_req ,_res){
     var Sqlquery = "select * from Departments";  
     QueryToExecuteInDatabase(_res, Sqlquery);  
 });  
+
+var upload = multer({ storage : storage}).single('userPhoto');
+app.post('/api/photo',function(req,res){
+    upload(req,res,function(err) {
+        if(err) {
+            return res.end("Error uploading file.");
+        }
+        res.end("File is uploaded");
+    });
+});
+
+app.get('/', function(req, res, next) {
+   // res.render('index', { title: 'Hello World!' });
+   // res.sendFile('index.html');
+    res.sendFile(path.join(__dirname+'/index.html'));
+
+});
+//Store all JS and CSS in Scripts folder.
+app.use("/app", _expressPackage.static('./app/'));
+//Store all HTML files in view folder.
+app.use(express.static(__dirname + '/View'));
+

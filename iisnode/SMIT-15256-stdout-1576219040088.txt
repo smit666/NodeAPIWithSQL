@@ -1,0 +1,21 @@
+App now running on port undefined
+{ fieldname: 'userPhoto',
+  originalname: 'lunetta.jpg',
+  encoding: '7bit',
+  mimetype: 'multipart/form-data' }
+{ fieldname: 'userPhoto',
+  originalname: 'lunetta.jpg',
+  encoding: '7bit',
+  mimetype: 'multipart/form-data' }
+{ fieldname: 'userPhoto',
+  originalname: 'lunetta.jpg',
+  encoding: '7bit',
+  mimetype: 'multipart/form-data' }
+{ fieldname: 'userPhoto',
+  originalname: 'lunetta.jpg',
+  encoding: '7bit',
+  mimetype: 'multipart/form-data' }
+{ fieldname: 'userPhoto',
+  originalname: 'lunetta.jpg',
+  encoding: '7bit',
+  mimetype: 'multipart/form-data' }
